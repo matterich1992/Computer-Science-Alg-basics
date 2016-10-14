@@ -223,6 +223,136 @@ var stitch = function(left, right){
 // Choose a Pivot --> choose the last number in the array
 //[5,4] lower than six -- [7,9] greater than 6-- this continues to break down
 //[4,5,6,7,9]; All hinges upon choosing a pivot point
+// Pivot Point is always the last index.item and then comparison
+
+//[4,9,3,5]
+// n log (n) for the big O
+
+function quickSort (nums) {
+	if (nums.length <=1){
+		return num;
+	var pivot = nums[nums.length-1];
+	var left = [];
+	var right = [];
+	
+	for (var i =0;i<nums.length-1;i++){
+		if(nums[i]<pivot){
+			left.push(nums[i]);
+		} else {
+			right.push(nums[i]);
+		}
+	 }
+
+	 return quickSort(left).concat(pivot,quicksort(right));
+
+	}
+}
+
+//////////////////Data Structure Interfaces///////////////
+//adding numbers to an object
+
+//Set
+set.add(5);
+set.add(7);
+set.add(7);
+
+// Map Data Structures
+// set of keys with corresponding values to them
+// Maps are objects in javascript
+obj.x = 5;
+obj.y = 7;
+
+//Stack -- Last in First Out
+// if you have 1 and push on 2, you haveto push off two to get to one
+// This alludes to methodologies like pop and push -->
+// They are stack methodologies
+
+
+// programming in a stack--> JS example
+
+function double(x){return x*2;}
+function squareAndAddFive(y){return square(y)+5;}
+function square(z){return z*z;}
+
+function maths(num){
+	var answer = double(num);
+	answer = squareAndAddFive(answer);
+	return answer;
+}
+
+maths(5);
+
+//Stack for this -- last in first out
+
+			square
+			______________
+
+double --> squareAndAddFive -->
+_____
+maths
+
+
+//Qeue --> different from stack as this is just a line
+
+
+/// Implementing Data Structures
+// ArrayLists (ES6) - no commas between method. That is the syntax
+
+class ArrayList = {
+		constructor () {
+			this.length = 0;
+			this.data = {};
+		}
+
+	push(value){ // adds onto the end
+		this.data[this.length] = value;
+		this.length++;
+	}
+
+	pop(){
+		var ans = this.data[this.length-1];
+		delete this.data[this.length-1];
+		this.length--;
+		return ans;
+		// alternate easy way
+		//return this.delete(this.length-1);
+	}
+
+	get (index) {
+
+		return this.data[index];
+	}
+
+
+	delete(index){
+		var ans = this.data[index];
+		this._collapseTo(index);
+		return ans;
+
+	}
+
+	_collapseTo(index){
+		for(var i =index;i<this.length;i++){
+			this.data[i] = this.data[i+1]; // moving everything over 1
+		}
+		delete this.data[this.length-1];
+		this.length--;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
